@@ -1,0 +1,72 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="{% url 'home' %}">CSE</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item {% if active_tab == 'home' %} active{% endif %}">
+                <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+
+              {% if request.session.faculty_id %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'faculty_page' %}">Faculty Page</a>
+            </li>
+            {% endif %}
+
+            {% if request.user.is_superuser %}
+
+            <li class="nav-item {% if active_tab == 'add_subject' %} active{% endif %}">
+                <a class="nav-link" href="{% url 'add_subject' %}">Add Subject</a>
+            </li>
+            <li class="nav-item {% if active_tab == 'add_faculty' %} active{% endif %}">
+                <a class="nav-link" href="{% url 'add_faculty' %}">Add Faculty</a>
+            </li>
+            <li class="nav-item {% if active_tab == 'assign_subject' %} active{% endif %}">
+                <a class="nav-link" href="{% url 'assign_subject' %}">Assign Subject</a>
+            </li>
+            <li class="nav-item dropdown {% if active_tab == 'generate_timetable' %} active{% endif %}">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Generate Time Table
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <a class="dropdown-item" href="{% url 'generate_timetable' sem=1 %}">sem 1</a>
+                    <a class="dropdown-item" href="{% url 'generate_timetable' sem=2 %}">sem 2</a>
+                    <a class="dropdown-item" href="{% url 'generate_timetable' sem=3 %}">sem 3</a>
+                    <a class="dropdown-item" href="{% url 'generate_timetable' sem=4 %}">sem 4</a>
+                    <a class="dropdown-item" href="{% url 'generate_timetable' sem=5 %}">sem 5</a>
+                    <a class="dropdown-item" href="{% url 'generate_timetable' sem=6 %}">sem 6</a>
+                </div>
+            </li>
+            <li class="nav-item {% if active_tab == 'free_list' %} active{% endif %}">
+                <a class="nav-link" href="{% url 'free_list' %}">Free List</a>
+            </li>
+            {% endif %}
+
+        </ul>
+
+        {% if request.user.is_superuser %}
+
+        <span class="navbar-text" style="color: white; padding-right: 10px;">
+            Welcome, ADMIN
+        </span>
+
+
+        <a class="btn btn-outline-light btn-sm" href="{% url 'admin_logout' %}" role="button">logout</a>
+
+        {% endif %}
+        {% if request.session.faculty_id %}
+
+        <span class="navbar-text" style="color: white; padding-right: 10px;">
+            Welcome, {{ request.session.faculty_name }}
+        </span>
+
+
+        <a class="btn btn-outline-light btn-sm" href="{% url 'faculty_logout' %}" role="button">logout</a>
+
+        {% endif %}
+    </div>
+</nav>

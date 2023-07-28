@@ -1,0 +1,305 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% include 'includes/navbar.html' with active_tab="generate_timetable" %}
+<div style="margin-top: 100px; text-align: center;">
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">DAY</th>
+                <th scope="col">7:30-8:30</th>
+                <th scope="col">8:30-9:30</th>
+                <th scope="col">9:30-10:30</th>
+                <th scope="col">10:30-11:30</th>
+                <th scope="col">11:30-12:30</th>
+                <th scope="col">12:30-1:30</th>
+                <th scope="col">1:30-2:30</th>
+                <th scope="col">2:30-3:30</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i in tt %}
+            <tr>
+                <th scope="row" id="pday{{ i.day }}">{{ i.day }}</th>
+                <td>
+                    <div class="col">
+                        <select id="period1{{ i.day }}" class="form-control">
+                            <option value="--">--</option>
+                            {% for j in assg %}
+                            <option value="{{ j.id }}">{{ j.room }} : {{ j.subject.name }} : {{ j.faculty.name }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                        <span id="period1room{{ i.day }}" style="color: brown;">{{ i.period1.room }}</span> <br>
+                        <span id="period1subject{{ i.day }}" style="color: red;">{{ i.period1.subject.name }}</span>
+                        <br>
+                        <span id="period1faculty{{ i.day }}" style="color: blue;">{{ i.period1.faculty.name }}</span>
+                    </div>
+                </td>
+                <td>
+                    <select id="period2{{ i.day }}" class="form-control">
+                        <option value="--">--</option>
+                        {% for j in assg %}
+                        <option value="{{ j.id }}">{{ j.room }} : {{ j.subject.name }} : {{ j.faculty.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <span id="period2room{{ i.day }}" style="color: brown;">{{ i.period2.room }}</span> <br>
+                    <span id="period2subject{{ i.day }}" style="color: red;">{{ i.period2.subject.name }}</span> <br>
+                    <span id="period2faculty{{ i.day }}" style="color: blue;">{{ i.period2.faculty.name }}</span>
+                </td>
+                <td>
+                    <select id="period3{{ i.day }}" class="form-control">
+                        <option value="--">--</option>
+                        {% for j in assg %}
+                        <option value="{{ j.id }}">{{ j.room }} : {{ j.subject.name }} : {{ j.faculty.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <span id="period3room{{ i.day }}" style="color: brown;">{{ i.period3.room }}</span> <br>
+                    <span id="period3subject{{ i.day }}" style="color: red;">{{ i.period3.subject.name }}</span> <br>
+                    <span id="period3faculty{{ i.day }}" style="color: blue;">{{ i.period3.faculty.name }}</span>
+                </td>
+                <td>
+                    <select id="period4{{ i.day }}" class="form-control">
+                        <option value="--">--</option>
+                        {% for j in assg %}
+                        <option value="{{ j.id }}">{{ j.room }} : {{ j.subject.name }} : {{ j.faculty.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <span id="period4room{{ i.day }}" style="color: brown;">{{ i.period4.room }}</span> <br>
+                    <span id="period4subject{{ i.day }}" style="color: red;">{{ i.period4.subject.name }}</span> <br>
+                    <span id="period4faculty{{ i.day }}" style="color: blue;">{{ i.period4.faculty.name }}</span>
+                </td>
+                <td>
+                    <select id="period5{{ i.day }}" class="form-control">
+                        <option value="--">--</option>
+                        {% for j in assg %}
+                        <option value="{{ j.id }}">{{ j.room }} : {{ j.subject.name }} : {{ j.faculty.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <span id="period5room{{ i.day }}" style="color: brown;">{{ i.period5.room }}</span> <br>
+                    <span id="period5subject{{ i.day }}" style="color: red;">{{ i.period5.subject.name }}</span> <br>
+                    <span id="period5faculty{{ i.day }}" style="color: blue;">{{ i.period5.faculty.name }}</span>
+                </td>
+                <td>
+                    <select id="period6{{ i.day }}" class="form-control">
+                        <option value="--">--</option>
+                        {% for j in assg %}
+                        <option value="{{ j.id }}">{{ j.room }} : {{ j.subject.name }} : {{ j.faculty.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <span id="period6room{{ i.day }}" style="color: brown;">{{ i.period6.room }}</span> <br>
+                    <span id="period6subject{{ i.day }}" style="color: red;">{{ i.period6.subject.name }}</span> <br>
+                    <span id="period6faculty{{ i.day }}" style="color: blue;">{{ i.period6.faculty.name }}</span>
+                </td>
+                <td>
+                    <select id="period7{{ i.day }}" class="form-control">
+                        <option value="--">--</option>
+                        {% for j in assg %}
+                        <option value="{{ j.id }}">{{ j.room }} : {{ j.subject.name }} : {{ j.faculty.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <span id="period7room{{ i.day }}" style="color: brown;">{{ i.period7.room }}</span> <br>
+                    <span id="period7subject{{ i.day }}" style="color: red;">{{ i.period7.subject.name }}</span> <br>
+                    <span id="period7faculty{{ i.day }}" style="color: blue;">{{ i.period7.faculty.name }}</span>
+                </td>
+                <td>
+                    <select id="period8{{ i.day }}" class="form-control">
+                        <option value="--">--</option>
+                        {% for j in assg %}
+                        <option value="{{ j.id }}">{{ j.room }} : {{ j.subject.name }} : {{ j.faculty.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <span id="period8room{{ i.day }}" style="color: brown;">{{ i.period8.room }}</span> <br>
+                    <span id="period8subject{{ i.day }}" style="color: red;">{{ i.period8.subject.name }}</span> <br>
+                    <span id="period8faculty{{ i.day }}" style="color: blue;">{{ i.period8.faculty.name }}</span>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}
+
+
+{% block js %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+{% for i in tt %}
+<script>
+    $('#period1{{ i.day }}').change(function () {
+        // console.log(table_no);
+        $.ajax({
+            type: "POST",
+            url: "{% url 'check_freedom' %}",
+            data: {
+                period: "period1{{ i.day }}",
+                pday: $('#pday{{ i.day }}').html(),
+                sa: $('#period1{{ i.day }}').val(),
+                sem: "{{ sem }}",
+            },
+            success: function (response) {
+                // console.log(response)
+                alert(response.msg)
+                $('#period1room{{ i.day }}').html(response.room)
+                $('#period1subject{{ i.day }}').html(response.subject)
+                $('#period1faculty{{ i.day }}').html(response.faculty)
+            }
+        });
+    });
+</script>
+<script>
+    $('#period2{{ i.day }}').change(function () {
+        // console.log(table_no);
+        $.ajax({
+            type: "POST",
+            url: "{% url 'check_freedom' %}",
+            data: {
+                period: "period2",
+                pday: $('#pday{{ i.day }}').html(),
+                sa: $('#period2{{ i.day }}').val(),
+                sem: "{{ sem }}",
+            },
+            success: function (response) {
+                // console.log(response)
+                alert(response.msg)
+                $('#period2room{{ i.day }}').html(response.room)
+                $('#period2subject{{ i.day }}').html(response.subject)
+                $('#period2faculty{{ i.day }}').html(response.faculty)
+            }
+        });
+    });
+</script>
+<script>
+    $('#period3{{ i.day }}').change(function () {
+        // console.log(table_no);
+        $.ajax({
+            type: "POST",
+            url: "{% url 'check_freedom' %}",
+            data: {
+                period: "period3{{ i.day }}",
+                pday: $('#pday{{ i.day }}').html(),
+                sa: $('#period3{{ i.day }}').val(),
+                sem: "{{ sem }}",
+            },
+            success: function (response) {
+                // console.log(response)
+                alert(response.msg)
+                $('#period3room{{ i.day }}').html(response.room)
+                $('#period3subject{{ i.day }}').html(response.subject)
+                $('#period3faculty{{ i.day }}').html(response.faculty)
+            }
+        });
+    });
+</script>
+<script>
+    $('#period4{{ i.day }}').change(function () {
+        // console.log(table_no);
+        $.ajax({
+            type: "POST",
+            url: "{% url 'check_freedom' %}",
+            data: {
+                period: "period4{{ i.day }}",
+                pday: $('#pday{{ i.day }}').html(),
+                sa: $('#period4{{ i.day }}').val(),
+                sem: "{{ sem }}",
+            },
+            success: function (response) {
+                // console.log(response)
+                alert(response.msg)
+                $('#period4room{{ i.day }}').html(response.room)
+                $('#period4subject{{ i.day }}').html(response.subject)
+                $('#period4faculty{{ i.day }}').html(response.faculty)
+            }
+        });
+    });
+</script>
+<script>
+    $('#period5{{ i.day }}').change(function () {
+        // console.log(table_no);
+        $.ajax({
+            type: "POST",
+            url: "{% url 'check_freedom' %}",
+            data: {
+                period: "period5{{ i.day }}",
+                pday: $('#pday{{ i.day }}').html(),
+                sa: $('#period5{{ i.day }}').val(),
+                sem: "{{ sem }}",
+            },
+            success: function (response) {
+                // console.log(response)
+                alert(response.msg)
+                $('#period5room{{ i.day }}').html(response.room)
+                $('#period5subject{{ i.day }}').html(response.subject)
+                $('#period5faculty{{ i.day }}').html(response.faculty)
+            }
+        });
+    });
+</script>
+<script>
+    $('#period6{{ i.day }}').change(function () {
+        // console.log(table_no);
+        $.ajax({
+            type: "POST",
+            url: "{% url 'check_freedom' %}",
+            data: {
+                period: "period6{{ i.day }}",
+                pday: $('#pday{{ i.day }}').html(),
+                sa: $('#period6{{ i.day }}').val(),
+                sem: "{{ sem }}",
+            },
+            success: function (response) {
+                // console.log(response)
+                alert(response.msg)
+                $('#period6room{{ i.day }}').html(response.room)
+                $('#period6subject{{ i.day }}').html(response.subject)
+                $('#period6faculty{{ i.day }}').html(response.faculty)
+            }
+        });
+    });
+</script>
+<script>
+    $('#period7{{ i.day }}').change(function () {
+        // console.log(table_no);
+        $.ajax({
+            type: "POST",
+            url: "{% url 'check_freedom' %}",
+            data: {
+                period: "period7{{ i.day }}",
+                pday: $('#pday{{ i.day }}').html(),
+                sa: $('#period7{{ i.day }}').val(),
+                sem: "{{ sem }}",
+            },
+            success: function (response) {
+                // console.log(response)
+                alert(response.msg)
+                $('#period7room{{ i.day }}').html(response.room)
+                $('#period7subject{{ i.day }}').html(response.subject)
+                $('#period7faculty{{ i.day }}').html(response.faculty)
+            }
+        });
+    });
+</script>
+<script>
+    $('#period8{{ i.day }}').change(function () {
+        // console.log(table_no);
+        $.ajax({
+            type: "POST",
+            url: "{% url 'check_freedom' %}",
+            data: {
+                period: "period8{{ i.day }}",
+                pday: $('#pday{{ i.day }}').html(),
+                sa: $('#period8{{ i.day }}').val(),
+                sem: "{{ sem }}",
+            },
+            success: function (response) {
+                // console.log(response)
+                alert(response.msg)
+                $('#period8room{{ i.day }}').html(response.room)
+                $('#period8subject{{ i.day }}').html(response.subject)
+                $('#period8faculty{{ i.day }}').html(response.faculty)
+            }
+        });
+    });
+</script>
+{% endfor %}
+{% endblock js %}

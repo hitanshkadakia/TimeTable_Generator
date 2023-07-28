@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Add New Faculty
+{% endblock title %}
+
+
+{% block content %}
+{% include 'includes/navbar.html' with active_tab="add_faculty" %}
+<div class="container outline" style="margin-top: 100px;text-align: center;">
+    <h1>Add Faculty</h1>
+    <form method="post" class="col-md-4 offset-4">
+        {% csrf_token %}
+        <input class="form-control" type="text" name="username" id="username" placeholder="username" required><br>
+        <input class="form-control" type="text" name="name" id="name" placeholder="Name" required><br>
+        <input class="form-control" type="email" name="email" id="email" placeholder="email" required><br>
+        <input class="form-control" type="number" name="phone" id="phone" placeholder="phone no." required><br>
+        <select name="gender" id="gender" class="form-control" required>
+            <option value="male">male</option>
+            <option value="female">female</option>
+        </select><br>
+        <select name="designation" id="designation" class="form-control" required>
+            <option value="" disabled selected>designation</option>
+            <option value="Professor">Professor</option>
+            <option value="Assistant Professor">Assistant Professor</option>
+            <option value="Associate Professor">Associate Professor</option>
+            <option value="Head of the Department">Head of the Department</option>
+            <option value="Guest Faculty">Guest Faculty</option>
+        </select><br>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+    <br><br>
+    <h1>Faculties</h1>
+    <table class="table table-light">
+        <thead class="thead-dark">
+            <tr>
+                <th>username</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>phone</th>
+                <th>gender</th>
+                <th>designation</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for a in faculties %}
+            <tr>
+                <td>{{ a.username }}</td>
+                <td>{{ a.name }}</td>
+                <td>{{ a.email }}</td>
+                <td>{{ a.phone }}</td>
+                <td>{{ a.gender }}</td>
+                <td>{{ a.designation }}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

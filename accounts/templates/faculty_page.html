@@ -1,0 +1,489 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+{% include 'includes/navbar.html' %}
+<div style="margin-top: 100px; text-align: center;">
+    <h1>{{ name }}'s Time Table</h1>
+    {{ tt.period1 }}
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">DAY</th>
+                <th scope="col">7:30-8:30</th>
+                <th scope="col">8:30-9:30</th>
+                <th scope="col">9:30-10:30</th>
+                <th scope="col">10:30-11:30</th>
+                <th scope="col">11:30-12:30</th>
+                <th scope="col">12:30-1:30</th>
+                <th scope="col">1:30-2:30</th>
+                <th scope="col">2:30-3:30</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                {% with tt_monday as x %}
+                <th scope="row">Monday</th>
+                <td>
+                    {% if request.session.faculty_id == x.period1.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period1.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period1.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period2.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period2.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period2.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period3.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period3.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period3.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period4.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period4.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period4.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period5.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period5.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period5.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period6.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period6.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period6.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period7.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period7.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period7.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period8.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period7.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period7.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                {% endwith %}
+            </tr>
+            <tr>
+                {% with tt_tuesday as x %}
+                <th scope="row">Tuesday</th>
+                <td>
+                    {% if request.session.faculty_id == x.period1.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period1.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period1.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period2.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period2.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period2.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period3.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period3.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period3.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period4.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period4.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period4.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period5.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period5.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period5.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period6.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period6.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period6.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period7.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period7.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period7.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period8.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period7.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period7.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                {% endwith %}
+            </tr>
+            <tr>
+                {% with tt_wednesday as x %}
+                <th scope="row">Wednesday</th>
+                <td>
+                    {% if request.session.faculty_id == x.period1.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period1.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period1.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period2.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period2.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period2.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period3.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period3.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period3.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period4.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period4.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period4.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period5.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period5.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period5.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period6.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period6.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period6.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period7.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period7.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period7.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period8.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period7.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period7.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                {% endwith %}
+            </tr>
+            <tr>
+                {% with tt_thursday as x %}
+                <th scope="row">Thursday</th>
+                <td>
+                    {% if request.session.faculty_id == x.period1.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period1.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period1.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period2.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period2.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period2.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period3.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period3.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period3.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period4.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period4.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period4.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period5.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period5.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period5.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period6.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period6.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period6.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period7.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period7.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period7.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period8.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period7.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period7.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                {% endwith %}
+            </tr>
+            <tr>
+                {% with tt_friday as x %}
+                <th scope="row">Friday</th>
+                <td>
+                    {% if request.session.faculty_id == x.period1.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period1.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period1.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period2.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period2.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period2.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period3.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period3.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period3.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period4.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period4.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period4.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period5.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period5.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period5.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period6.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period6.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period6.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period7.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period7.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period7.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period8.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period7.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period7.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                {% endwith %}
+            </tr>
+            <tr>
+                {% with tt_saturday as x %}
+                <th scope="row">Saturday</th>
+                <td>
+                    {% if request.session.faculty_id == x.period1.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period1.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period1.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period2.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period2.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period2.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period3.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period3.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period3.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period4.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period4.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period4.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period5.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period5.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period5.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period6.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period6.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period6.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period7.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period7.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period7.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                <td>
+                    {% if request.session.faculty_id == x.period8.faculty.id %}
+                    <!-- <div class="col"> -->
+                    <span id="period1room" style="color: brown;">{{ x.period7.room }}</span> <br>
+                    <span id="period1subject" style="color: red;">{{ x.period7.subject.name }}</span> <br>
+                    <span id="period1faculty" style="color: blue;">sem: {{ x.semester }}</span>
+                    <!-- </div> -->
+                    {% endif %}
+                </td>
+                {% endwith %}
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

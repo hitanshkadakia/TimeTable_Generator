@@ -1,0 +1,306 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+SBMP-TimeTable Generator
+{% endblock title  %}
+
+
+{% block content %}
+
+<link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/6805d10968.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" src="extensions/sticky-header/bootstrap-table-sticky-header.css">
+    <script src="extensions/sticky-header/bootstrap-table-sticky-header.js"></script>
+<style>
+#features {
+        padding: 5% 5% 7% 5%;
+        background-color: #b3ffcb;
+        position: relative;
+        
+        
+      }
+      #footer {
+        background-color: #d1d1e0;
+        text-align: center;
+        padding-top: 50px;
+        padding-bottom: 10px;
+      }
+      .f1 {
+        color: black;
+        padding: 10px;
+      }
+      .f2 {
+        color: black;
+        padding: 10px;
+      }
+      .f3 {
+        color: black;
+        padding: 10px;
+      }
+      .f4 {
+        color: black;
+        padding: 10px;
+      }
+      .f5 {
+        padding-top: 50px;
+      
+      }
+      
+      .col-lg-4 {
+        text-align: center;
+        }
+      
+      .row {
+        padding-top: 3.5rem;
+        }
+      
+        .emoji {
+        color: #ef8172;
+        background-size: 100px;
+        padding-bottom: 10px; 
+        }
+        .emoji:hover {
+        color: #ff4c68;
+        }
+        #pricing {
+          text-align: center;
+          padding: 100px;
+        }
+        .pricing-column {
+          padding: 3% 2%;
+        }
+        #para2{
+          font-size: 18px;
+          font-family: Roboto, sans-serif;
+          letter-spacing: 2px;
+          text-transform: capitalize;
+          text-align: center;
+        
+          padding-top: 10px;
+          font-weight: normal;
+        
+        }
+        #cta {
+          background-color: #b3e6ff;
+          text-align:center;
+          padding: 7% 15%;
+        }
+        #pricing {
+          background-color: #ff9999;
+        }
+        #para13{
+          font-family: Roboto, sans-serif;
+          letter-spacing: 2px; 
+          text-transform: capitalize;
+          text-align: center;
+          
+          padding: 10px;
+          
+        
+        }
+        #testimonials {
+          text-align: center;
+          background-color: #000000;
+          color: #fff;
+        }
+        #history{
+          background-color: #ecc6d9;
+        }
+        .carousel-item {
+          padding: 7% 15%;
+        }
+        .testimonial-image {
+          width : 16%;
+          border-radius: 100%;
+          margin: 20px;
+        }
+        #tag_course1{
+          font-size: 56px;
+          font-family: Roboto, sans-serif;
+          letter-spacing: 2px;
+          margin-bottom: -5px;
+          
+          font-weight: bold;
+          text-transform: uppercase;
+        
+          background: linear-gradient(67deg, rgba(241,34,34,1) 0%, rgba(6,78,242,1) 100%);
+             -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        
+        }
+  </style>
+<section id="history">
+    <div class="container my-5 pb-4">
+     <div class="bg-white p-md-5 py-3 px-3 bg-history text-md-left text-center">
+         <div class="row">
+             <header class="text-center mb-3">
+                 <h2 class="h2 text-brown font-weight-light wow fadeInUp">Time Table Generator for SBMP (Shri Bhagubhai Mafatlal Polytechnic)</h2>
+                 <div class="underline wow fadeInDown"></div>
+             </header>
+             <div class="w-100">
+                 <div class="row px-md-5">
+                     <div class="col-md-4 pl-md-4 px-md-0 px-5 order-md-1 order-2 w-100 text-center wow fadeInUp">
+                         <a href="{% static 'media/sbmplogo.jpg' %}" class="fancybox" style="text-decoration: none;">
+                             <span class="d-block mb-2">
+                                 <img src="{% static 'media/sbmplogo.jpg' %}" data-src="src/images/pic-unesco.jpg" class="img-fluid" alt="Unesco Certificate" title="Unesco Certificate" />
+                             </span>
+   
+                         </a>
+                         
+                     </div>
+                     <div class="col-md-8 pr-md-4 pl-md-4 px-5 order-md-2 order-1 mb-2 w-100">
+                         <p class="wow fadeInUp">Time table generation is tedious job for educationalist with respect to time and man power. Providing an automatic time table generator will help to generate time table automatically. Proposed system of our project will help to generate it automatically as well as helps to save time. It avoids the complexity of setting and managing Timetable manually. </p>
+                         <p class="wow fadeInUp">These algorithms incorporate a numeral of strategy, aimed to improve the working of the search operation. The system will take various inputs like number of subjects, teachers, and workload of a teacher, semester, and priority of subject, classroom & laboratory. By relying on these inputs, it will generate possible time tables for working days of the week for teaching faculty. This will integrate by making optimal use of all resources in a way that will best suit the constraints. Basically our project is a web application developed using the Django Framework and a SQLite database.</p>
+                         
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+   </div>
+   </section>
+   {% include 'includes/navbar.html' with active_tab="home" %}
+
+ 
+<div class="container" style="margin-top: 100px; text-align: center;margin-bottom: 200px;">
+    <h1>View Time Table</h1><br>
+    <form action="{% url 'show_timetable' %}" method="get">
+        <div class="form-group col-md-2 offset-5">
+            <label for="sem">Select the semester</label>
+            <select class="form-control" name="sem" id="sem">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Show Time-Table</button>
+    </form>
+    <br>
+
+    {% if not request.user.is_superuser %}
+
+    {% if not request.session.faculty_id %}
+
+
+
+    <div class="row">
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary btn-lg col-5" data-toggle="modal" data-target="#modelId">
+            Faculty Login
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+            aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Faculty Login</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <form action="{% url 'faculty_login' %}" method="POST" class="col-6 offset-3">
+                                {% csrf_token %}
+                                <input class="form-control" type="text" name="username" id="username"
+                                    placeholder="Faculty ID"> <br>
+                                <button type="submit" class="btn btn-primary">Log In</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $('#exampleModal').on('show.bs.modal', event => {
+                var button = $(event.relatedTarget);
+                var modal = $(this);
+                // Use above variables to manipulate the DOM
+
+            });
+        </script>
+        <a name="" id="" class="btn btn-primary btn-lg col-5 offset-2" href="{% url 'admin_login' %}"
+            role="button">Admin Login</a>
+    </div>
+    {% endif %}
+    {% endif %}
+
+</div>
+   <section id="features">
+    <!-- <div class="container-fluid"> -->
+
+
+<div class="row">
+  <div class="col-lg-4">
+    <i class="emoji fas fa-check-circle fa-4x"></i>
+    <h3>Easy to use.</h3>
+    <p id="para12">So easy to use, even a student could do it by itself</p>
+ </div>
+ <div class="col-lg-4">
+   <i class="emoji far fa-dot-circle fa-4x"></i>
+    <h3>Elite Image</h3>
+    <p id="para12"> We have all the options, the greatest required.</p>
+     </div>
+  <div class="col-lg-4">
+    <i class="emoji fas fa-heart fa-4x"></i>
+    <h3>Guaranteed to work.</h3>
+    <p id="para12">Making timetables with the least time needed.</p>
+     </div>
+</div>
+
+
+<!-- </div> -->
+  </section>
+
+   <section id="testimonials">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item">
+          <h2 style="font-size:2.5rem">Eliminate Paper-based Processes</h2>
+          <p id="para2"> Manual timetable system involves arduous paperwork and manual data entry that results in scheduling errors.<p/>
+          <img class="testimonial-image" src="{% static 'media/testimonial-03.jpg' %}" alt="dog-profile">
+          <em>Convenience Gaurenteed</em>
+        </div>
+        <div class="carousel-item">
+          <h2 style="font-size:2.5rem">Intuitive & User-friendly</h2>
+          <p id="para2"> Timetable Management Software is simple and easy to use. No technical knowledge is required to operate it.<p/>
+          <img class="testimonial-image" src="{% static 'media/testimonial-02.png' %}" alt="dog-profile">
+          <em>Accessible Throughout</em>
+        </div>
+        <div class="carousel-item active">
+          <h2 style="font-size:2.5rem">Generate Multiple Timetables </h2>
+          <p id="para2"> Create multiple timetables at a time and manage different timetable databases for multiple departments with customizable notifications and alerts.<p/>
+          <img class="testimonial-image" src="{% static 'media/testimonial-01.jpg' %}" alt="dog-profile">
+          <em>Smooth & Simple</em>
+        </div>
+      <a class="carousel-control-prev" role="button" href="#carouselExampleControls"  data-slide="prev">
+        <span class="carousel-control-prev-icon"></span></a>
+
+
+      <a class="carousel-control-next" role="button" href="#carouselExampleControls"  data-slide="next">
+        <span class="carousel-control-next-icon"></span></a>
+
+
+    </div>
+
+
+
+
+  </section>
+   <footer id="footer">
+
+    <a class="f2" href="#"><i class="fab fa-github"></i></a>
+    <h6 class="f5">© Copyright 2022 Timetable Generator for SBMP</h6>
+
+  </footer>   
+{% endblock content %}

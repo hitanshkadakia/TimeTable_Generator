@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Add Subject
+{% endblock title %}
+
+
+{% block content %}
+{% include 'includes/navbar.html' with active_tab="add_subject" %}
+<div class="container" style="margin-top: 100px; text-align: center;">
+    <h1>Add Subject</h1> <br>
+    <form method="post" class="col-4 offset-4">
+        {% csrf_token %}
+        <input class="form-control" type="text" name="code" id="code" placeholder="Subject Code" required> <br>
+        <input class="form-control" type="text" name="name" id="name" placeholder="Subject Name" required> <br>
+        <select id="Semester" class="form-control" name="semester" required>
+            <option disabled selected>Semester</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+        </select> <br>
+        <button class="btn btn-primary" type="submit">Add Subject</button>
+    </form>
+    <br><br>
+    <h1>Subjects Table</h1>
+    <table class="table table-light">
+        <thead class="thead-dark">
+            <tr>
+                <th>Subject Code</th>
+                <th>Subject Name</th>
+                <th>Semester</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for a in subjects %}
+            <tr>
+                <td>{{ a.code }}</td>
+                <td>{{ a.name }}</td>
+                <td>{{ a.semester }}</td>
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+</div>
+{% endblock content %}
